@@ -13,7 +13,40 @@
     return res;
  }
 
+function respuestaUsuario(){
+    let res = prompt("Escribe tu elección");
+    String(res);
+    res = res.toLowerCase();
+    return res;
+} 
 
-let a = prompt("Escribe la opcón");
-a.toLowerCase();
-console.log(respuestaMaquina(a));
+function juego(usr , pc){
+    let res = "Escribi bien man";
+    if(usr == pc){
+        res = "Empate man";   
+    }else if(usr == "piedra"){
+        if(pc == "papel"){
+            res = "Perdiste man";
+        }else{
+            res = "Ganaste man";
+        }
+    }else if(usr == "papel"){
+        if(pc == "tijera"){
+            res = "Perdiste man";
+        }else{
+            res = "Ganaste man";
+        }
+    }else if(usr == "tijera"){
+        if(pc == "piedra"){
+            res = "Perdiste man";
+        }else{
+            res = "Ganaste man";
+        }
+    }
+    return res;           
+}
+
+let maquina = respuestaMaquina();
+let usuario = respuestaUsuario();
+let resultado = juego(usuario, maquina);
+document.write("Elegiste  " +  usuario + "  y la máquina eligió  " + maquina + " , el resultado es >   " + resultado);
