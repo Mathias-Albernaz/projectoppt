@@ -1,3 +1,6 @@
+header{
+    height: 18%;
+}
 
 body{
     display: flex;
@@ -11,13 +14,31 @@ body{
     overflow: hidden;
 }
 
+#fila1{
+    display: flex;
+    justify-content: space-around;
+    background-color: #fac865;
+    opacity: 0.5;
+    width: 561px;
+    height: 250px;
+}
+
+.seleccion,
+.resultado{
+    background-color: #fa6565;
+    height: 100%;
+    width: 33.3%;
+}
+
+.resultado{
+    background-color:crimson ;
+}
+
 #fila3{
-    border-radius: 15px;
-    border: solid #abdaff;
     padding: 20px;
     padding-bottom: 0px;
     position: absolute;
-    bottom: -13px;
+    bottom: -17px;
 }
 
 .boton_ppt{

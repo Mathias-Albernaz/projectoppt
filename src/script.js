@@ -2,9 +2,24 @@
 let maquina = respuestaMaquina();
 let usuario = respuestaUsuario();
 let resultado = juego(usuario, maquina);
-document.write("Elegiste  " +  usuario + "  y la máquina eligió  " + maquina + " , el resultado es >   " + resultado);
+var piedra = document.querySelector("#boton_piedra");
+var papel = document.querySelector("#boton_papel");
+var tijera = document.querySelector("#boton_tijera");
+var seleccionado = null;
+piedra.addEventListener("click", () => {
+    seleccionado = "piedra";
+    juego();
+})
+piedra.addEventListener("click", () => {
+    seleccionado = "papel";
+    juego();
+})
+piedra.addEventListener("click", () => {
+    seleccionado = "tijera";
+    juego();
+})
 
- function respuestaMaquina(){
+function respuestaMaquina(){
     let num = parseInt(Math.random()*10);
     let res;
     if(num <= 3){
@@ -19,8 +34,8 @@ document.write("Elegiste  " +  usuario + "  y la máquina eligió  " + maquina +
 
 
 
-function juego(usr , pc){
-    let res = "Escribi bien man";
+function juego(){
+    let seleccionado = 
     if(usr == pc){
         res = "Empate man";   
     }else if(usr == "piedra"){
