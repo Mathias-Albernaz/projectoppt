@@ -1,0 +1,53 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #4689bd;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+}
+
+#fila3{
+    border-radius: 15px;
+    border: solid #abdaff;
+    padding: 20px;
+    padding-bottom: 0px;
+    position: absolute;
+    bottom: -13px;
+}
+
+.boton_ppt{
+    height:250px;
+    width: 150px;
+    border: transparent;
+    background-color: transparent;
+    transition-duration: 0.3s;
+}
+
+
+#boton_piedra{
+    background-image: url(/imagenes/piedra.png);
+}
+
+#boton_papel{
+    background-image: url(/imagenes/papel.png);
+    width: 187px;
+}
+
+#boton_tijera{
+    background-image: url(/imagenes/tijera.png);
+}
+
+/** animaciones */
+.boton_ppt:hover{
+    transform: translateY(-14px);
+}
+
+.boton_ppt:active{
+    transform: translateY(15px);
+    transition-duration: 0,1s;
+}

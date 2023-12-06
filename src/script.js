@@ -1,5 +1,9 @@
 
- 
+let maquina = respuestaMaquina();
+let usuario = respuestaUsuario();
+let resultado = juego(usuario, maquina);
+document.write("Elegiste  " +  usuario + "  y la máquina eligió  " + maquina + " , el resultado es >   " + resultado);
+
  function respuestaMaquina(){
     let num = parseInt(Math.random()*10);
     let res;
@@ -13,12 +17,7 @@
     return res;
  }
 
-function respuestaUsuario(){
-    let res = prompt("Escribe tu elección");
-    String(res);
-    res = res.toLowerCase();
-    return res;
-} 
+
 
 function juego(usr , pc){
     let res = "Escribi bien man";
@@ -46,7 +45,3 @@ function juego(usr , pc){
     return res;           
 }
 
-let maquina = respuestaMaquina();
-let usuario = respuestaUsuario();
-let resultado = juego(usuario, maquina);
-document.write("Elegiste  " +  usuario + "  y la máquina eligió  " + maquina + " , el resultado es >   " + resultado);
