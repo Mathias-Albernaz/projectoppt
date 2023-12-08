@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="/src/script.js"></script>
+    <script src="/src/script.js" defer></script>
     <link rel="stylesheet" href="/src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS</title>
 </head>
 <body>
-  <header></header>
+  <header>
+    <P class="texto"></P>
+  </header>
   <div class="contenedor_h" id="fila1">
-    <div class="seleccion" id="seleccion_usuario"></div>
+    <div class="caja">
+      <div class="seleccion" id="seleccion_usuario"></div>
+      <p class="etiqueta">TU ^</p>
+    </div>  
     <div class="resultado"></div>
-    <div class="seleccion" id="seleccion_pc"></div>
+    <div class="caja">
+      <div class="seleccion" id="seleccion_pc"></div>
+      <P class="etiqueta">PC ^</P>
+    </div>  
   </div>
   <div class="contenedor_h" id="fila3">
     <button class="boton_ppt" id="boton_piedra"></button>

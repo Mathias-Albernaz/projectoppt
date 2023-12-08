@@ -1,62 +1,67 @@
+let seleccionUsuario = document.querySelector("#seleccion_usuario");
+let seleccionPC = document.querySelector("#seleccion_pc");
+let piedra = document.querySelector("#boton_piedra");
+let papel = document.querySelector("#boton_papel");
+let tijera = document.querySelector("#boton_tijera");
+var texto = document.querySelector(".texto");
 
-let maquina = respuestaMaquina();
-let usuario = respuestaUsuario();
-let resultado = juego(usuario, maquina);
-var piedra = document.querySelector("#boton_piedra");
-var papel = document.querySelector("#boton_papel");
-var tijera = document.querySelector("#boton_tijera");
 var seleccionado = null;
+var seleccionadoPC = null;
+
 piedra.addEventListener("click", () => {
     seleccionado = "piedra";
+    seleccionUsuario.style.backgroundImage = "url(/imagenes/piedra.png)"
     juego();
 })
-piedra.addEventListener("click", () => {
+papel.addEventListener("click", () => {
     seleccionado = "papel";
+    seleccionUsuario.style.backgroundImage = "url(/imagenes/papel.png)"
     juego();
 })
-piedra.addEventListener("click", () => {
+tijera.addEventListener("click", () => {
     seleccionado = "tijera";
+    seleccionUsuario.style.backgroundImage = "url(/imagenes/tijera.png)"
     juego();
 })
 
 function respuestaMaquina(){
     let num = parseInt(Math.random()*10);
-    let res;
     if(num <= 3){
-        res = "piedra";
+        seleccionPC.style.backgroundImage = "url(/imagenes/piedra.png)";
+        seleccionadoPC = "piedra";
     }else if(num > 3 && num <= 6){
-        res = "papel";
+        seleccionPC.style.backgroundImage = "url(/imagenes/papel.png)";
+        seleccionadoPC = "papel";
     }else{
-        res = "tijera";
+        seleccionPC.style.backgroundImage = "url(/imagenes/tijera.png)";
+        seleccionadoPC = "tijera";
     }
-    return res;
  }
 
 
 
 function juego(){
-    let seleccionado = 
-    if(usr == pc){
-        res = "Empate man";   
-    }else if(usr == "piedra"){
-        if(pc == "papel"){
-            res = "Perdiste man";
+    respuestaMaquina();
+    if(seleccionado === seleccionadoPC){
+        texto.textContent = 'EMPATE';  
+    }else if(seleccionado == "piedra"){
+        if(seleccionadoPC == "papel"){
+            texto.textContent = "DERROTA";
         }else{
-            res = "Ganaste man";
+            texto.textContent = "VICTORIA";
         }
-    }else if(usr == "papel"){
-        if(pc == "tijera"){
-            res = "Perdiste man";
+    }else if(seleccionado == "papel"){
+        if(seleccionadoPC == "tijera"){
+            texto.textContent = "DERROTA";
         }else{
-            res = "Ganaste man";
+            texto.textContent = "VICTORIA";
         }
-    }else if(usr == "tijera"){
-        if(pc == "piedra"){
-            res = "Perdiste man";
+    }else if(seleccionado == "tijera"){
+        if(seleccionadoPC == "piedra"){
+            texto.textContent = "DERROTA";
         }else{
-            res = "Ganaste man";
+            texto.textContent = "VICTORIA";
         }
-    }
-    return res;           
+    }          
 }
 

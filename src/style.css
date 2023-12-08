@@ -1,5 +1,29 @@
+@font-face {
+    font-family: pixelada;
+    src: url(/fuentes/pixelmix.ttf);
+}
+
+@keyframes ArribaAbajo {
+    0%, 100% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 20px;
+    }
+  }
+
+* {
+    font-family: pixelada;
+}
+
 header{
     height: 18%;
+}
+
+.texto{
+    font-size: 10vh;
+    margin: 0;
+    color: aliceblue;
 }
 
 body{
@@ -8,7 +32,7 @@ body{
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: #4689bd;
+    background-color: rgb(55, 180, 97);
     box-sizing: border-box;
     margin: 0;
     overflow: hidden;
@@ -17,21 +41,36 @@ body{
 #fila1{
     display: flex;
     justify-content: space-around;
-    background-color: #fac865;
-    opacity: 0.5;
     width: 561px;
-    height: 250px;
+    height: 353px;
+}
+
+.caja{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.etiqueta{
+    animation: ArribaAbajo 1.5s ease-in-out infinite;
+    position: relative;
+    color: aliceblue;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .seleccion,
 .resultado{
-    background-color: #fa6565;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100%;
-    width: 33.3%;
+    width: 100%;
 }
 
-.resultado{
-    background-color:crimson ;
+.seleccion{
+    border: solid white;
 }
 
 #fila3{
